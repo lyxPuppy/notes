@@ -71,3 +71,17 @@
 	/TODO        # 仅仅忽略根目录下的 TODO 文件,不包括 subdir/TODO(子目录下的 TODO)
 	build/       # 忽略 build/目录下所有的文件
 	doc/*.txt    # 会忽略 doc/notes.txt, 但不包括 doc/server/arch.txt
+
+11, 查看工作目录中当前文件和暂存区域快照之间的差异,也就是修改之后还没有暂存起来的变化内容
+	git diff
+
+12, 若要查看已经暂存起来的文件和上次提交时的快照之间的差异,可以使用 git diff --cached 命令;
+	git 1.6.1+ 的版本还允许使用 git diff --staged , 效果是相同的;
+
+13, 提交修改
+	git commit -v   # -v 选项把修改差异的每一行添加到注释
+
+14, 跳过 git commit 之前使用 git add
+	git add -a
+	会把所有已跟踪的文件都提交
+	
