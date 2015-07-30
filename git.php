@@ -85,3 +85,72 @@
 	git add -a
 	会把所有已跟踪的文件都提交
 
+15, 移除文件
+	a, 如果删除文件,则使用 git rm
+		在使用 git rm 的时候,要注意,被删除的文件如果是新建的文件,还没有加入跟踪,
+		则使用 rm 删除即可,如果使用 git rm 删除,会抛出: fatal: pathspec 'test.t' did not match any files 的错误
+
+		如果被删除的文件已经加入了跟踪,并还没有提交,则要使用 git rm -f 删除
+
+		如果被删除的文件已经提交,则使用 git rm 来删除
+
+	b, 取消跟踪文件
+		git rm --cached 文件路径
+
+	d, 如果使用 git 的 glob 模型,则会递归删除
+		git rm \*.t
+
+16, 移动或重命名文件(目录)
+	git mv 原文件名 新的文件名
+	注意: 重命名的文件是要给 git 跟踪的文件;
+
+17, 查看提交历史
+	a, git log
+
+	b, git log -p 查看每次提交的差异
+
+	c, git log -数字 只查看指定数字个提交
+
+	d, git log --pretty=
+		--pretty 的值:
+			oneline : 把每个提交显示在一行
+			short : 只显示提交 id, 作者, 作者邮箱, 提交的注释
+			full : 在 short 基础上多显示 提交都的信息
+			fuller : 在 full 基础上多显示 作者的日期, 提交的日期
+
+			format: git log --pretty=format:"%h , %an , %ar : %s"
+				%H : 提交对象 (commit)的完整 哈希字串
+				%h : 提交对象的简短哈希字串
+				%T : 树对象(tree)的完整哈希字串
+				%t : 树对象的简短哈希字串
+				%P : 父对象(parent)的完整哈希字串
+				%p : 父对象的简短哈希字串
+
+				%an : 作者(author) 的名字
+				%ae : 作者的邮箱
+				%ad : 作者修订日期(date)(可以用 -date= 选项定制格式)
+				%ar : 作者修订日期,按多久以前的方式显示
+				%cn : 提交者(committer)的名字
+				%ce : 提交者的邮箱
+				%cd : 提交日期
+				%cr : 提交日期,按多久以前的方式显示
+				%s  : 提交的说明
+	e, git log 一些常用参数
+		-p 按补丁格式显示每个更新之间的差异
+		--state : 显示每次更新的文件修改统计信息
+		--shortstat : 只显示 --stat 中最后的行数修改添加移除统计
+		--name-only : 仅在提交信息后显示已修改的文件清单
+		--name-status : 显示新增,修改,删除的文件清单
+		--abbrev-commit : 仅显示 SHA-1 的前几个字符,而非所有的 40 个字符
+		--relative-date : 使用较短的相对时间显示(比如: '2 weeks ago')
+		--graph : 显示 ASCII 图形表示的分支合并历史
+		--pretty : 使用其他格式显示历史提交信息;可用选项: online,short,full,fuller 和 format(后跟指定的格式)
+		--grep : 可以使用正则匹配提交的说明
+		--author : 只显示指定的作者的提交
+
+		如果要得到同时满足两个选项搜索条件的提交,就必须使用 --all-match 选项
+
+	f, 如果只关心某些文件或者目录的历史提交,可以在 git log 选项的最后指定它们的路径;因为是放在最后位置的选项,
+		所以用两个短线(--) 隔开之前的选项和后面限定的路径名
+		如: git log --grep -- test
+
