@@ -81,7 +81,7 @@
 13, 提交修改
 	git commit -v   # -v 选项把修改差异的每一行添加到注释
 
-14, 跳过 git commit 之前使用 git add
+14, 跳过 git commit 之前使用 git add (跳过使用暂存区)
 	git add -a
 	会把所有已跟踪的文件都提交
-	
+
