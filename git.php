@@ -156,3 +156,13 @@
 
 18, 修改最后一次提交
 	git commit --amend
+
+19, 取消已经暂存的文件
+	如果在 git add 的时候,把暂时不想 add 文件给 add 了,同可以使用 [git reset HEAD 文件名] 来取消暂存
+	如:
+		git reset HEAD test.php
+
+20, 取消对文件的修改
+	如果觉得刚才对某文件的修改完全没必要,那么该如何取消修改,回到之前的状态(也就是修改前的版本呢?)
+	可以使用 git status 来得到这样的提示
+	git checkout -- 文件名
