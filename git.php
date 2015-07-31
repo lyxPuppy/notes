@@ -154,3 +154,5 @@
 		所以用两个短线(--) 隔开之前的选项和后面限定的路径名
 		如: git log --grep -- test
 
+18, 修改最后一次提交
+	git commit --amend
