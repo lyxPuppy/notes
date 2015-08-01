@@ -117,3 +117,8 @@
 		media : media 定义媒介资源的类型,供浏览器决定是否下载;
 		src : url: 媒介的 url;
 		type : 数值: 定义播放在音频流中的什么位置开始播放;默认是从开关播放;
+
+4, 表单
+	把表单元素放在 <form> 之外
+	<form action="" id="login_form"></form>
+	<input type="text" name="user_name" form="login_form" />
