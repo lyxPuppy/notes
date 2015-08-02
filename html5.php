@@ -119,6 +119,28 @@
 		type : 数值: 定义播放在音频流中的什么位置开始播放;默认是从开关播放;
 
 4, 表单
-	把表单元素放在 <form> 之外
-	<form action="" id="login_form"></form>
-	<input type="text" name="user_name" form="login_form" />
+	4.1
+		把表单元素放在 <form> 之外
+		<form action="" id="login_form"></form>
+		<input type="text" name="user_name" form="login_form" />
+
+	4.2, 必填属性
+		required
+		<input type="text" required />
+
+	4.3, type 的值
+		email:
+		url:
+		date:
+		time:
+		month:
+		datetime:
+		datetime-local:
+		number:
+			属性: max:最大值;
+				  min:最小值
+		range:
+
+
+	4.4, 属性
+		autofocus="true" // 自动获取焦点

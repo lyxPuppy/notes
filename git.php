@@ -241,3 +241,34 @@
 
 39, 删除分支
 	git branch -d 分支名称
+
+40, 查看每个分支最后一次的提交
+	git branch -v
+
+41, 要从分支清单中筛选出已经(或尚未)与当前分支合并的分支,可以用 --merge 和 --no-mreged 选项;
+	比如 git branch --merge 查看哪些分支已经被并入当前分支
+
+42, 一般来说, 如果在 git branch --merge 的结果中, 可以把没有 * 的分支都用 git branch -d 来删除掉,
+	因为 既然已经把它们包含的工作整合到了其他分支,删除了也不会损失什么;
+
+43, 如果用 git branch -d 来删除 git branch --no-mreged 列出的分支,会删除失败,因为它们还包含未合并的工作;
+	如果强制要删除它们,可以用 git branch -D 来删除
+
+45, 把本地的分支推送到服务器
+	git push remote名称 本地分支
+	这样是把本地的分支推送到服务器的同名分支
+
+	如果想把本地的分支推送到服务器不同名分支
+	git push remote名称 本地分支:远程分支
+
+46, 在 fetch 操作近抓来新的远程分支后,仍然无法在本地编辑该远程仓库;
+	比如在远程仓库中有一个 serverfix 分支,用 fetch 获取下来,
+	其实本地并不会有一个新的 serverfix 分支,有的只是一个无法移动的 origin/serverfix 指针
+	如果要把该内容合并到当前分支,可以运行 git mrege origin/serverfix;
+	如果想要一份自己的 serverfix 来开发,可以在远程分支的基础上分化出一个新的分支来:
+
+	git checkout -b serverfix origin/serverfix
+
+	这样就会切换到新建的 serverfix 本地分支,其内容同远程分支 origin/serverfix 一致,可以在
+	里面继续开发了;
+
