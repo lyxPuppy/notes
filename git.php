@@ -260,6 +260,7 @@
 
 	如果想把本地的分支推送到服务器不同名分支
 	git push remote名称 本地分支:远程分支
+	如: git push notes chu:master   # 表示把本地的 chu 分支推送到远程仓库的 master 分支
 
 46, 在 fetch 操作近抓来新的远程分支后,仍然无法在本地编辑该远程仓库;
 	比如在远程仓库中有一个 serverfix 分支,用 fetch 获取下来,
