@@ -273,3 +273,9 @@
 	这样就会切换到新建的 serverfix 本地分支,其内容同远程分支 origin/serverfix 一致,可以在
 	里面继续开发了;
 
+	如果 git 的版本大于 1.6.2, 则以下命令和上面的命令是同等的
+	git checkout --track origin/serverfix
+
+47, 删除远程分支
+	git push 远程名 :要删除的分支名
+
