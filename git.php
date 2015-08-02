@@ -209,14 +209,14 @@
 	git push origin 标签名
 
 	如果要一次推送所有(本地新增的)标签上去,可以使用 --tags 选项
-
 	git push origin --tags
+
 
 32, 设置别名
 	git config --global alias.名称 命令
 
 33, 查看最后一次提交 
-	git log -1(这个是数字 1) HEAD
+	git log -1(这个是数字 1)
 
 34, 创建分支
 	git branch 分支名称
@@ -241,6 +241,3 @@
 
 39, 删除分支
 	git branch -d 分支名称
-
-	
-	
