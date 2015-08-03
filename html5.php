@@ -144,3 +144,28 @@
 
 	4.4, 属性
 		autofocus="true" // 自动获取焦点
+
+5, 地理位置(widnow.navigator.geolocation)
+	5.1, getCurrentPosition(success,error,options)
+		该方法是实现地理定位的核心方法,该方法能够对获取到的信息作出处理以及设置
+		success(position): 获取信息成功的回调函数
+		error(errorCode) 获取信息失败的回调函数
+		options 获取信息前可以执照指定需求来设置一些参数
+
+		5.1.1, 获取成功传给回调的参数
+			{
+				coords.latitude, // 纬度
+				coords.longitude, // (经度)
+				coords.altitude, // 海拔
+				coords.accuracy, // 位置精确度
+				coords.altitudeAccuracy, // 海拔精确度
+				coords.heading, // 朝向
+				coords.speed, // 速度
+				timestamp, // 响度的日期/时间
+			}
+
+		5.1.2, options={
+				enableHighAccuracy:, // 表示是否允许用高精度,但这个参数在很多设备上设置了都没有
+				timeout:, // 指定超时时间
+				maximumAge: // 指定缓存的时间
+			};

@@ -278,4 +278,8 @@
 
 47, 删除远程分支
 	git push 远程名 :要删除的分支名
+	如, 删除远程的 test 分支
+	git push notes :test
+
+48, 把一个分支整合到另一个分支的办法有两种: merge(合并) 和 rebase(衍合)
 
