@@ -169,3 +169,49 @@
 				timeout:, // 指定超时时间
 				maximumAge: // 指定缓存的时间
 			};
+6, Canvas
+	6.1, Canvas 默认的尺寸是:300*150;背景颜色:白色;
+	
+	6.2, 获取绘图环境
+		var canvas=document.getElementById('canvas'),
+		canvasContext=canvas.getContext('2d'); // 这里获取绘图环境
+
+	6.3, 颜色值
+		a, 直接用颜色名称:red,blue;
+		b, 十六进制颜色值: #aaaaaa;
+		c, rgb(1-255,1-255,1-255);
+		d, rgba(1-255,1-255,1-255,透明度[0-1]);
+
+	6.4, 画图
+		6.4.1, 矩形
+			参数:
+				x : x 坐标;
+				y : y 坐标;
+				w : 宽度;
+				h : 高度;
+
+			rect(x,y,w,h) : 创建矩形
+			fillRect(x,y,w,h) : 绘制'被填充'的矩形;
+			strokeRect(x,y,w,h) : 绘制矩形(无填充)
+
+	6.5, 颜色的属性
+		fillStyle : 设置 或 返回用于填充绘画的颜色,渐变,或模式; 如: fillStyle='#aaa';
+
+		strokeStyle : 设置 或 返回用于笔触的颜色,渐变或模式
+
+		shadowColor : 设置 或 返回用于阴影的颜色
+
+		shadowBlur : 设置 或 返回用于阴影模糊级别
+
+		shadowOffsetX : 设置 或 返回阴影矩形关的水平距离
+
+		shadowOffsetY : 设置 或 返回阴影距形状的垂直距离
+
+	6.6, 颜色的方法
+		createLinearGradient(开始坐标x,开始坐标y,结束坐标x,结束坐标y) : 创建线性渐变(用在画布内容上)
+
+		createPattern(图片对象,'repeat[repeat-x,repeat-y]') : 在指定的方向重复指定元素
+
+		createRadialGradient(开始圆心x,开始圆心y,开始圆的半径,结束圆心x,结束圆心y,结束圆的半径) : 创建放射状/环形的渐变(用在画布内容上)
+
+		addColorStop(位置值,颜色值) : 规定渐变对象中的颜色和停止位置
