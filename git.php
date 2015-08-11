@@ -314,3 +314,9 @@
 56, 如果想应用更早的储藏,可以通过名字指定它,如: git stash apply stash@{0};
 	如果不指明,Git 默认使用最近的储藏并尝试应用它;
 	git stash apply
+
+57, 删除储藏
+	git stash drop 对应的名字
+
+58, 重新应用储藏并删除应用的储藏
+	git stash pop 
