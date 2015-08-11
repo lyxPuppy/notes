@@ -215,3 +215,8 @@
 		createRadialGradient(开始圆心x,开始圆心y,开始圆的半径,结束圆心x,结束圆心y,结束圆的半径) : 创建放射状/环形的渐变(用在画布内容上)
 
 		addColorStop(位置值,颜色值) : 规定渐变对象中的颜色和停止位置
+
+	6.7, 路径
+		canvas.rect(0,0,100,100);
+		canvas.stroke(); // 画图
+		canvas.fill(); // 画填充的矩形
