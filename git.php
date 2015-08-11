@@ -308,4 +308,5 @@
 54, 暂存当前的工作区
 	git stash
 
-55, 
+55, 查看暂存区列表
+	git stash list
